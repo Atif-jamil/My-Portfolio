@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Abril Fatface', Georgia, serif;
+  --font-body: 'Inter', 'Roboto', system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+  /* Deep dark blue background */
+  background: linear-gradient(135deg, #0a0f2a 0%, #050a1a 50%, #0a0f25 100%);
+  background-color: #050a1a;
+  color: #FFFFFF;
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+}
+
+/* ========= FONTS - Abril Fatface for Headings ========= */
+
+/* Hero & Main Headings */
+h1, .hero-title, .main-heading {
+  font-family: 'Abril Fatface', Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(0, 100, 255, 0.4);
+}
+
+/* Section Titles */
+h2, .section-title, .heading-secondary {
+  font-family: 'Abril Fatface', Georgia, serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  border-left: 4px solid #3B82F6;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Subheadings */
+h3, .subheading {
+  font-family: 'Abril Fatface', Georgia, serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  color: #60A5FA;
+}
+
+/* Body Text */
+p, .body-text, .description {
+  font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #FFFFFF;
+}
+
+/* Small text / Meta info */
+small, .meta-text, .tag {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #60A5FA;
+}
+
+/* ========= CARDS - Dark Blue with Blue Border ========= */
+.glass-card {
+  background: rgba(10, 20, 45, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid #3B82F6;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+  transition: all 0.35s ease;
+  padding: 1.5rem;
+}
+
+.glass-card-hover {
+  @apply transition-all duration-300;
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: #FFFFFF;
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+  background: rgba(20, 35, 65, 0.85);
+}
+
+/* Card Title Styling */
+.glass-card h3 {
+  font-family: 'Abril Fatface', Georgia, serif;
+  font-weight: 400;
+  color: #60A5FA;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.glass-card p {
+  color: #FFFFFF;
+}
+
+/* ========= BUTTONS ========= */
+.btn-primary, button.primary {
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: #2563EB;
+  border: 1px solid #60A5FA;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover, button.primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #3B82F6;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #3B82F6;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+  border-color: #FFFFFF;
+  color: #60A5FA;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* ========= LINK STYLES ========= */
+a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #60A5FA;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  color: #FFFFFF;
+}
+
+/* Underline effect on hover */
+a:not(.no-underline):after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #3B82F6;
+  transition: width 0.3s ease;
+}
+
+a:not(.no-underline):hover:after {
+  width: 100%;
+}
+
+/* ========= SCROLLBAR ========= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* ========= SELECTION COLOR ========= */
+::selection {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+
+/* ========= TAG / SKILL PILLS ========= */
+.tag-pill, .skill-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+  border: 1px solid #3B82F6;
+  transition: all 0.2s;
+}
+
+.tag-pill:hover, .skill-tag:hover {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: scale(1.02);
+}
+
+/* ========= FORM ELEMENTS ========= */
+input, textarea, select {
+  background: #0a0f2a;
+  border: 1px solid #3B82F6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* Placeholder text */
+input::placeholder, textarea::placeholder {
+  color: #8899cc;
+}
+
+/* ========= ADDITIONAL EFFECTS ========= */
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Blue gradient border for containers */
+.gradient-border {
+  border: 2px solid transparent;
+  background: linear-gradient(#0a0f2a, #0a0f2a) padding-box,
+              linear-gradient(135deg, #3B82F6, #FFFFFF) border-box;
+  border-radius: 1rem;
+}
+
+/* Hero section overlay */
+.hero-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+/* Horizontal rule */
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3B82F6, #FFFFFF, #3B82F6, transparent);
+  margin: 1.5rem 0;
+}
+
+/* Code block styling */
+code, pre {
+  background: #0a0f2a;
+  color: #60A5FA;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  font-family: monospace;
+}
+
+/* List styling */
+ul, ol {
+  color: #FFFFFF;
+}
+
+li::marker {
+  color: #3B82F6;
+}
+
+/* Icon hover effect */
+.icon-hover:hover {
+  color: #3B82F6;
+  transition: all 0.3s ease;
+}
