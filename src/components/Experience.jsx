@@ -46,7 +46,7 @@ const Experience = () => {
       title: "Front-End Developer Intern",
       company: "OZ Developer, Bahria Sky",
       location: "Lahore",
-      period: "06/2025 - 08/2025",
+      period: "Feb 13, 2026 - May 20, 2026",
       description: "Completed a 3-month internship as a front-end developer",
       responsibilities: [
         "Developed user interfaces for web applications using React",
