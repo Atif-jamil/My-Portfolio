@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaGlobe } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaPaperPlane, FaRegClock } from 'react-icons/fa'
 
 const Contact = () => {
   const contactInfo = [
@@ -19,7 +19,7 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       label: 'Phone',
-      value: '03410437852',
+      value: '+92 341 0437852',
       link: 'tel:03410437852'
     },
     {
@@ -33,12 +33,6 @@ const Contact = () => {
       label: 'LinkedIn',
       value: 'atif-jamil',
       link: 'https://www.linkedin.com/in/atif-jamil/'
-    },
-    {
-      icon: <FaGlobe />,
-      label: 'Portfolio',
-      value: 'SoleStyle Footwear',
-      link: 'https://solestyle-footwear.netlify.app/'
     }
   ]
 
@@ -54,21 +48,25 @@ const Contact = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Get In{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-[#ff6a00]">
               Touch
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-[#ff6a00] mx-auto rounded-full" />
+          <p className="text-[#bfbfbf] mt-4 max-w-md mx-auto">
+            Feel free to reach out for collaborations or just a friendly chat
+          </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card p-8"
-        >
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Info Cards */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4"
+          >
             {contactInfo.map((item, index) => (
               <motion.div
                 key={index}
@@ -76,40 +74,99 @@ const Contact = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, x: 5 }}
-                className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-all"
+                whileHover={{ scale: 1.02, x: 8 }}
+                className="relative group p-5 rounded-2xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#ff6a00] transition-all duration-300 overflow-hidden"
               >
-                <div className="text-2xl text-blue-400 mt-1">{item.icon}</div>
-                <div>
-                  <p className="text-sm text-gray-400 mb-1">{item.label}</p>
-                  {item.link ? (
-                    <a
-                      href={item.link}
-                      target={item.link.startsWith('http') ? '_blank' : undefined}
-                      rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-lg text-white hover:text-blue-400 transition-colors"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-lg text-white">{item.value}</p>
-                  )}
+                {/* Orange glow effect on hover */}
+                <span className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="absolute inset-0 rounded-2xl bg-[#ff6a00] blur-xl opacity-10"></span>
+                </span>
+                
+                <div className="flex items-start gap-4 relative z-10">
+                  <div className="w-12 h-12 rounded-xl bg-[#ff6a00]/10 flex items-center justify-center text-[#ff6a00] group-hover:bg-[#ff6a00] group-hover:text-white transition-all duration-300">
+                    <div className="text-2xl">{item.icon}</div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm text-[#bfbfbf] mb-1">{item.label}</p>
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        target={item.link.startsWith('http') ? '_blank' : undefined}
+                        rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-lg text-white hover:text-[#ff6a00] transition-colors font-medium"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-lg text-white font-medium">{item.value}</p>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Language Section */}
-          <div className="mt-8 pt-8 border-t border-white/10">
-            <h3 className="text-xl font-semibold mb-4 text-center text-blue-400">Languages</h3>
-            <div className="flex justify-center gap-4">
-              <div className="glass-card px-6 py-3">
-                <p className="font-semibold">English</p>
-                <p className="text-sm text-gray-400">Advanced</p>
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="glass-card p-6"
+          >
+            <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
+              <FaPaperPlane className="text-[#ff6a00]" />
+              Send a Message
+            </h3>
+            <p className="text-[#bfbfbf] text-sm mb-6">
+              I'll get back to you as soon as possible
+            </p>
+            
+            <form className="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-white placeholder-[#bfbfbf] focus:outline-none focus:border-[#ff6a00] focus:shadow-[0_0_10px_rgba(255,106,0,0.2)] transition-all duration-300"
+                />
               </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-white placeholder-[#bfbfbf] focus:outline-none focus:border-[#ff6a00] focus:shadow-[0_0_10px_rgba(255,106,0,0.2)] transition-all duration-300"
+                />
+              </div>
+              <div>
+                <textarea
+                  rows="4"
+                  placeholder="Your Message"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] text-white placeholder-[#bfbfbf] focus:outline-none focus:border-[#ff6a00] focus:shadow-[0_0_10px_rgba(255,106,0,0.2)] transition-all duration-300 resize-none"
+                ></textarea>
+              </div>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="relative group w-full py-3 rounded-xl bg-[#ff6a00] text-white font-semibold overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Send Message
+                  <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </span>
+                <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="absolute inset-0 rounded-xl bg-[#ff6a00] blur-xl opacity-60"></span>
+                </span>
+              </motion.button>
+            </form>
+
+            {/* Response Time Note */}
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-[#bfbfbf]">
+              <FaRegClock className="text-[#ff6a00]" />
+              <span>Usually responds within 24 hours</span>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

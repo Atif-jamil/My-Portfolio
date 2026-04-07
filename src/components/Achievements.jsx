@@ -33,11 +33,11 @@ const Achievements = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Key{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-[#ff6a00]">
               Achievements
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-[#ff6a00] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -51,11 +51,11 @@ const Achievements = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               className="glass-card glass-card-hover p-6 text-center"
             >
-              <div className="text-4xl text-blue-400 mb-4 flex justify-center">
+              <div className="text-4xl text-[#ff6a00] mb-4 flex justify-center">
                 {achievement.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-purple-400">{achievement.title}</h3>
-              <p className="text-gray-400 text-sm">{achievement.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-[#ff6a00]">{achievement.title}</h3>
+              <p className="text-[#bfbfbf] text-sm">{achievement.description}</p>
             </motion.div>
           ))}
         </div>

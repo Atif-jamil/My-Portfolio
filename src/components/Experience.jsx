@@ -69,11 +69,11 @@ const Experience = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Work{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-[#ff6a00]">
               Experience
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-[#ff6a00] mx-auto rounded-full" />
         </motion.div>
 
         <div className="space-y-6">
@@ -88,16 +88,16 @@ const Experience = () => {
             >
               <div className="flex flex-wrap justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-semibold text-blue-400">{exp.title}</h3>
-                  <p className="text-xl text-gray-300">{exp.company}</p>
+                  <h3 className="text-2xl font-semibold text-[#ff6a00]">{exp.title}</h3>
+                  <p className="text-xl text-white">{exp.company}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-gray-400">{exp.location}</p>
-                  <p className="text-sm text-gray-500">{exp.period}</p>
+                  <p className="text-[#bfbfbf]">{exp.location}</p>
+                  <p className="text-sm text-[#bfbfbf]">{exp.period}</p>
                 </div>
               </div>
               
-              <p className="text-gray-400 mb-4">{exp.description}</p>
+              <p className="text-[#bfbfbf] mb-4">{exp.description}</p>
               
               <ul className="space-y-3">
                 {exp.responsibilities.map((item, idx) => (
@@ -109,8 +109,8 @@ const Experience = () => {
                     transition={{ delay: idx * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <FaCode className="text-purple-400 mt-1 flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
+                    <FaCode className="text-[#ff6a00] mt-1 flex-shrink-0" />
+                    <span className="text-[#bfbfbf]">{item}</span>
                   </motion.li>
                 ))}
               </ul>

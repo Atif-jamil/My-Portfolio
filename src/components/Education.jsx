@@ -28,11 +28,11 @@ const Education = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             My{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-[#ff6a00]">
               Education
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-[#ff6a00] mx-auto rounded-full" />
         </motion.div>
 
         <motion.div
@@ -43,10 +43,10 @@ const Education = () => {
           className="glass-card p-8"
         >
           <div className="flex items-start gap-4 mb-6">
-            <FaGraduationCap className="text-4xl text-blue-400 flex-shrink-0" />
+            <FaGraduationCap className="text-4xl text-[#ff6a00] flex-shrink-0" />
             <div>
-              <h3 className="text-2xl font-semibold text-blue-400">{education[0].degree}</h3>
-              <div className="flex flex-wrap gap-4 mt-2 text-gray-400">
+              <h3 className="text-2xl font-semibold text-[#ff6a00]">{education[0].degree}</h3>
+              <div className="flex flex-wrap gap-4 mt-2 text-[#bfbfbf]">
                 <span className="flex items-center gap-2">
                   <FaUniversity /> {education[0].institution}
                 </span>
@@ -54,14 +54,14 @@ const Education = () => {
                   <FaCalendarAlt /> {education[0].period}
                 </span>
                 <span className="flex items-center gap-2">
-                  <FaStar className="text-yellow-400" /> CGPA: {education[0].cgpa}
+                  <FaStar className="text-[#ff6a00]" /> CGPA: {education[0].cgpa}
                 </span>
               </div>
             </div>
           </div>
 
           <div className="mt-6 pl-14">
-            <h4 className="font-semibold text-purple-400 mb-3">Key Achievements:</h4>
+            <h4 className="font-semibold text-[#ff6a00] mb-3">Key Achievements:</h4>
             <ul className="space-y-2">
               {education[0].achievements.map((achievement, index) => (
                 <motion.li
@@ -70,9 +70,9 @@ const Education = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-start gap-2 text-gray-300"
+                  className="flex items-start gap-2 text-[#bfbfbf]"
                 >
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-[#ff6a00] mt-1">•</span>
                   {achievement}
                 </motion.li>
               ))}

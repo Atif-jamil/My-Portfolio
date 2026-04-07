@@ -74,11 +74,11 @@ const Projects = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             My{' '}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-[#ff6a00]">
               Projects
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-[#ff6a00] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -89,28 +89,28 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8 }}
               className="glass-card glass-card-hover p-6 flex flex-col"
             >
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-2xl font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-semibold text-[#ff6a00]">
                   {project.title}
                 </h3>
                 {project.period && (
-                  <span className="text-sm text-gray-500">{project.period}</span>
+                  <span className="text-sm text-[#bfbfbf]">{project.period}</span>
                 )}
               </div>
 
               {project.context && (
-                <p className="text-sm text-blue-400 mb-2">{project.context}</p>
+                <p className="text-sm text-[#ff6a00] mb-2">{project.context}</p>
               )}
 
-              <p className="text-gray-300 mb-4">{project.description}</p>
+              <p className="text-white mb-4">{project.description}</p>
 
               <ul className="space-y-2 mb-4 flex-grow">
                 {project.details.map((detail, idx) => (
-                  <li key={idx} className="text-sm text-gray-400 flex items-start gap-2">
-                    <span className="text-purple-400 mt-1">•</span>
+                  <li key={idx} className="text-sm text-[#bfbfbf] flex items-start gap-2">
+                    <span className="text-[#ff6a00] mt-1">•</span>
                     {detail}
                   </li>
                 ))}
@@ -118,7 +118,7 @@ const Projects = () => {
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag, idx) => (
-                  <span key={idx} className="text-xs px-2 py-1 bg-white/10 rounded-full text-gray-400">
+                  <span key={idx} className="text-xs px-2 py-1 bg-[#1a1a1a] border border-[#2a2a2a] rounded-full text-[#ff6a00] hover:border-[#ff6a00] transition-all duration-300">
                     {tag}
                   </span>
                 ))}
@@ -132,7 +132,7 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                    className="inline-flex items-center gap-2 text-[#ff6a00] hover:text-white transition-colors"
                   >
                     <FaExternalLinkAlt size={14} />
                     Live Demo
@@ -146,7 +146,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-colors"
+                    className="inline-flex items-center gap-2 text-[#bfbfbf] hover:text-[#ff6a00] transition-colors"
                   >
                     <FaGithub size={14} />
                     GitHub
